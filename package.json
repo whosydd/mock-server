@@ -1,0 +1,37 @@
+{
+  "name": "mock-server",
+  "version": "0.1.0",
+  "description": "一个简单的测试服务器",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/whosydd/mock-server.git"
+  },
+  "keywords": [
+    "mockjs",
+    "express"
+  ],
+  "author": "GY <dev.youngkwok718@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/whosydd/mock-server/issues"
+  },
+  "homepage": "https://github.com/whosydd/mock-server#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mockjs": "^1.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.1.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.14",
+    "prettier": "^2.4.1"
+  }
+}
