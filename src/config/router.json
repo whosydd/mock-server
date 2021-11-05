@@ -3,7 +3,6 @@
     "path": "/get",
     "type": "get",
     "response": {
-      "status": 200,
       "data": {
         "msg": "hello world",
         "name": "@name"
@@ -13,8 +12,8 @@
   "req2": {
     "path": "/post",
     "type": "post",
+    "auth": true,
     "response": {
-      "status": 200,
       "data": {
         "msg": "hello world",
         "name": "@name",
@@ -39,7 +38,6 @@
     "path": "/patch",
     "type": "patch",
     "response": {
-      "status": 200,
       "data": {
         "msg": "hello world",
         "name": "@name",

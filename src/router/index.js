@@ -2,11 +2,12 @@ const express = require('express')
 const router = express.Router()
 const config = require('../config/router.json')
 const { mock } = require('mockjs')
+const md5 = require('md5')
 
 const routes = Object.keys(config)
 
 routes.forEach(route => {
-  const { path, type, status = 200, response } = config[route]
+  const { path, type, auth, status = 200, response } = config[route]
 
   switch (type.toLowerCase()) {
     case 'get':
@@ -17,8 +18,20 @@ routes.forEach(route => {
       break
     case 'post':
       router.post(path, (req, res) => {
-        console.log('post', req.headers, req.body)
-        res.status(status).send(mock(response))
+        if (auth) {
+          console.log(auth)
+          const { username, password } = req.body
+          const token = md5(username + password + 'wzb-bs' + Date.now())
+          res.cookie('token', token, {
+            expires: new Date(Date.now() + 900000),
+            httpOnly: true,
+          })
+          console.log('auth', req.headers, req.body)
+          res.status(status).send(mock({ ...response, token }))
+        } else {
+          console.log('post', req.headers, req.body)
+          res.status(status).send(mock(response))
+        }
       })
       break
     case 'patch':
