@@ -25,9 +25,11 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "md5": "^2.3.0",
     "mockjs": "^1.1.0"
   },
   "devDependencies": {
+    "dotenv": "^10.0.0",
     "eslint": "^8.1.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
